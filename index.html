@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--The title page-->
+    <title>S-DANCE STUDIO CENTER</title>
+    <!--I used Link to external CSS stylesheet-->
+    <link rel="stylesheet" href="studio.css">
+</head>
+<body> 
+    <!--I used navigation bar and header section-->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <!--Logo image for my studio-->
+                <img src="studio logo.png" alt="My logo" width="100" height="100">
+            </div>
+            <nav>
+                <!--I used ul for for my navigation menu and navigation link for the next page-->
+                <ul class="link">
+                    <a href="index.html">Home</a> 
+                    <a href="classes.html">Classes</a> 
+                    <a href="events.html">Events</a>
+                    <a href="contact.html">Contact</a> 
+                    <a href="social.html">Social</a> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--Container for my slideshow-->
+    <div class="slideshow-container">
+        <!--this is the first slide-->
+        <div class="slide-container">
+            <img class="slide active" src="slide one.JPG" alt="slide1">
+            <div class="overlay active">
+                <h1>S-DANCE STUDIO CENTER</h1>
+                <p>EAT. SLEEP. DANCE. REPEAT.</p>
+                <p>This Studio is not just a place of learning dance, this is a lively and open space for the ones of different ages and different levels who come to visit the art of movement.<br>
+                    In here you'll learn everything and learn how to perform most of the different varieties of ballet including classical ballet, Hip hop, contemporay, Afro, Femme, and more! <br>
+                    Our experienced instructors with a focus on the basics and your personal growth constantly offer you a hand both to build up your confidence and flourish your creativity.</p>
+            </div>
+        </div>
+
+        <!--The second slide-->
+        <div class="slide-container">
+            <img class="slide" src="slide two.JPG" alt="slide2">
+            <div class="slidep1">
+                <h1>OUR COMMUNITY</h1>
+                <p>The choreography and rhythm are but part of S-Studio Dance Center community not only a second family, <br>
+                    but drawing together for a shared passion and an expression creating long lasting friendships. <br>
+                    It's a place where you soak into others, acknowledge your evolution, one another and find your voice through dance.</p>
+            </div>
+        </div>
+
+        <!--the third slide-->
+        <div class="slide-container">
+            <img class="slide" src="slide three.jpg" alt="slide3">
+            <div class="slidep2">
+                <h1>DANCE WITH PASSION</h1>
+                <p>So dance with passion and love his knowledge with a enthusiasm and the musical beat will carry you higher. Leap with courage, learn ritually, to dance with the music upwards.<br>
+                At S-Studio Dance Center you are not getting taught by someone but trying to learn to know yourself through every movement.</p>
+            </div>
+        </div>
+
+        <!--Navigation buttons left and right for the slideshow-->
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+
+    <div class="copyright">
+        <footer>
+            <p> Copyright © 2025. All Rights Reserved. Website designed by Shanmarky</p>
+        </footer>
+    </div>
+
+    <!--I used internal javascript and this script enables slideshow works-->
+    <script>
+        // Wait til the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // select all side containers
+            const slideContainers = document.querySelectorAll('.slide-container');
+            // It select navigation buttons
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            // to track the current slide index
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                // Remove active class from all slide containers
+                slideContainers.forEach(container => container.classList.remove('active'));
+
+                // Add active class to current slide container
+                slideContainers[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slideContainers.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slideContainers.length) % slideContainers.length;
+                showSlide(currentSlide);
+            }
+
+            // Add click event listeners to navigation buttons
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Show first slide initially
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>

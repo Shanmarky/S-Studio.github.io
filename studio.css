@@ -1,0 +1,577 @@
+/*My basic page styling to set up the overall look and feel*/
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    height: 100%;
+    background-color: #000000;
+}
+
+/*My navigation bar styling with a beautiful gradient effect*/
+.navbar {
+    display: fixed;
+    align-items:end;
+    margin: auto; 
+    background: linear-gradient(white, black);
+    padding: 16px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+/*My container for the navigation elements*/
+.navbar .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    text-align: center;
+}
+
+/*My navigation links styling for better spacing and layout*/
+.navbar .link {
+    padding: 0%;
+    margin: 0%;
+    display: flex;
+    gap: 150px;
+    list-style: none;
+}
+
+/*My navigation link text styling for better readability*/
+.navbar .link a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    font-weight:bolder;
+}
+
+/*My slideshow container for the homepage*/
+.slideshow-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*My individual slide container with smooth transitions*/
+.slide-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/*My active slide styling*/
+.slide-container.active {
+    opacity: 1;
+}
+
+/*My slide image styling for proper fit*/
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*My navigation buttons for the slideshow*/
+.prev, .next {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+    user-select: none;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+/*My hover effect for navigation buttons*/
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*My previous button positioning*/
+.prev {
+    left: 20px;
+}
+
+/*My next button positioning*/
+.next {
+    right: 20px;
+}
+
+/*My common text overlay styling for slides*/
+.overlay, .slidep1, .slidep2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 200vw;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 80%;
+    z-index: 2;
+}
+
+/*My heading styles for overlays*/
+.overlay h1, .slidep1 h1, .slidep2 h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/*My paragraph styles for overlays*/
+.overlay p, .slidep1 p, .slidep2 p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/*My special styling for the first paragraph in overlays*/
+.overlay p:first-of-type {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/*My responsive design for larger screens*/
+@media screen and (max-width: 1024px) {
+    .overlay, .slidep1, .slidep2 {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .overlay h1, .slidep1 h1, .slidep2 h1 {
+        font-size: 3.5em;
+    }
+
+    .overlay p, .slidep1 p, .slidep2 p {
+        font-size: 1.6em;
+    }
+
+    .overlay p:first-of-type {
+        font-size: 2em;
+    }
+}
+
+/*My responsive design for medium screens*/
+@media screen and (max-width: 768px) {
+    .overlay, .slidep1, .slidep2 {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .overlay h1, .slidep1 h1, .slidep2 h1 {
+        font-size: 3em;
+    }
+
+    .overlay p, .slidep1 p, .slidep2 p {
+        font-size: 1.4em;
+    }
+
+    .overlay p:first-of-type {
+        font-size: 1.8em;
+    }
+}
+
+/*My responsive design for mobile screens*/
+@media screen and (max-width: 480px) {
+    .overlay, .slidep1, .slidep2 {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .overlay h1, .slidep1 h1, .slidep2 h1 {
+        font-size: 2.5em;
+    }
+
+    .overlay p, .slidep1 p, .slidep2 p {
+        font-size: 1.2em;
+    }
+
+    .overlay p:first-of-type {
+        font-size: 1.6em;
+    }
+}
+
+/*My image container styling for teacher profiles*/
+.image-container {
+    position: relative;
+    width: 150%;
+    max-width: 350px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+/*My teacher image styling*/
+.Teacher {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/*My overlay effect for teacher images*/
+.overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/*My hover effect for image containers*/
+.image-container:hover .overlay-image {
+    opacity: 1;
+}
+
+/*My image zoom effect on hover*/
+.image-container:hover .Teacher {
+    transform: scale(1.05);
+}
+
+/*My overlay text styling for teacher profiles*/
+.overlay-image h1 {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.overlay-image p {
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+}
+
+/*My classes section grid layout*/
+.Classes {
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 60px;
+    max-width: 200vw;
+    margin: 0 auto;
+}
+
+/*My responsive design for classes section on larger screens*/
+@media (max-width: 1024px) {
+    .Classes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*My responsive design for classes section on mobile*/
+@media (max-width: 768px) {
+    .Classes {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*My events section container styling*/
+.events-container {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+/*My events list layout*/
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/*My individual event card styling*/
+.event-card {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*My event background image styling*/
+.event-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*My event content overlay styling*/
+.event-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    text-align: center;
+}
+
+/*My event title styling*/
+.event-card h2 {
+    margin: 0 0 10px 0;
+    color: white;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/*My event date styling*/
+.event-date {
+    color: #ffd700;
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/*My event description styling*/
+.event-card p {
+    color: white;
+    line-height: 1.6;
+    margin: 10px 0;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*My contact section container styling*/
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 50px 0;
+    padding: 20px;
+    flex-wrap: wrap;
+    background-color: #000000;
+    min-height: 50vh;
+}
+
+/*My contact link styling*/
+.contact-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+    padding: 25px 30px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    background-color: #000000;
+    width: 400px;
+    min-height: 20px;
+}
+
+/*My hover effect for contact links*/
+.contact-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*My contact icon styling*/
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/*My contact text styling*/
+.contact-text {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.4;
+    color: #ffffff;
+}
+
+/*My phone link specific styling*/
+.phone-link {
+    color: #000000;
+    border-color: #ffffff;
+}
+
+/*My Gmail link specific styling*/
+.gmail-link {
+    color: #EA4335;
+    border-color: #EA4335;
+}
+
+/*My WhatsApp link specific styling*/
+.whatsapp-link {
+    color: #25D366;
+    border-color: #25D366;
+}
+
+/*My responsive design for contact section on larger screens*/
+@media screen and (max-width: 1200px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-link {
+        width: 500px;
+    }
+}
+
+/*My responsive design for contact section on mobile*/
+@media screen and (max-width: 600px) {
+    .contact-link {
+        width: 90%;
+        padding: 20px;
+        min-height: 100px;
+    }
+
+    .contact-text {
+        font-size: 15px;
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/*My social media section container styling*/
+.social-container {
+    padding: 50px;
+    text-align: center;
+    background-color: #000000;
+}
+
+/*My social media title styling*/
+.social-title {
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-size: 2.5em;
+}
+
+/*My social media cards container*/
+.social-cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*My social media link styling*/
+.social-link {
+    text-decoration: none;
+    flex: 1;
+    max-width: 400px;
+}
+
+/*My social media card styling*/
+.social-card {
+    border: 3px solid;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*My Facebook card gradient background*/
+.facebook-card {
+    background: linear-gradient(45deg, #001837, #1e436e, white);
+    border-color: whitesmoke;
+}
+
+/*My Instagram card gradient background*/
+.instagram-card {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    border-color: whitesmoke;
+}
+
+/*My TikTok card gradient background*/
+.tiktok-card {
+    background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55);
+    border-color: whitesmoke;
+}
+
+/*My social media icon styling*/
+.social-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 25px;
+}
+
+/*My social media heading styling*/
+.social-heading {
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+/*My Facebook heading color*/
+.facebook-heading {
+    color: #1877f2;
+}
+
+/*My Instagram heading color*/
+.instagram-heading {
+    color: #e1306c;
+}
+
+/*My social media text styling*/
+.social-text {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.copyright {
+    text-align: center;
+    font-family: monospace;
+}
